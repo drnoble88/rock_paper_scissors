@@ -34,9 +34,7 @@ function getComputerChoice() {
 
 function game() {
     if (computerScore < 5 && playerScore < 5) {
-
         p.textContent = `${playRound('rock', getComputerChoice())}`;
-
         score.textContent = `Your Score ${playerScore} Computer Score: ${computerScore}`
     }
     if (playerScore === 5) {
