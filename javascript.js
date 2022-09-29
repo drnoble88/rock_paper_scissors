@@ -48,8 +48,6 @@ function game() {
 let computerScore = 0;
 let playerScore = 0;
 
-
-// console.log(game());
 const container = document.querySelector('#container');
 const p = document.querySelector('p');
 const score = document.querySelector('#score');
