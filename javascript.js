@@ -1,18 +1,13 @@
 function playRound(playerSelection, computerSelection) {
-    let lowerCasePS = toLowerCase(playerSelection);
-    if (playerWins(lowerCasePS, computerSelection)) {
+    if (playerWins(playerSelection, computerSelection)) {
         playerScore++;
-        return `You Win! ${lowerCasePS} beats ${computerSelection}!`;
+        return `You Win! ${playerSelection} beats ${computerSelection}!`;
     }
-    if (lowerCasePS === computerSelection) {
+    if (playerSelection === computerSelection) {
         return 'Tie Game!';
     }
     computerScore++;
-    return `You Lose! ${computerSelection} beats ${lowerCasePS}!`;
-}
-
-function toLowerCase(playerSelection) {
-    return playerSelection.toLowerCase();
+    return `You Lose! ${computerSelection} beats ${playerSelection}!`;
 }
 
 function playerWins(playerSelection, computerSelection) {
@@ -52,4 +47,16 @@ function game() {
 let computerScore = 0;
 let playerScore = 0;
 
-console.log(game());
+// console.log(game());
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    console.log(playRound('rock', getComputerChoice()));
+});
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {
+    console.log(playRound('paper', getComputerChoice()));
+});
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {
+    console.log(playRound('scissors', getComputerChoice()));
+});
