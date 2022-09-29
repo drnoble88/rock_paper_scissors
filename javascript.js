@@ -33,30 +33,41 @@ function getComputerChoice() {
 }
 
 function game() {
-    while (computerScore < 5 && playerScore < 5) {
-        const playerSelection = prompt('Pick rock, paper, or scissors! First to five:');
-        console.log(playRound(playerSelection, getComputerChoice()));
-        console.log(`Player points: ${playerScore}, Computer points: ${computerScore}`)
+    if (computerScore < 5 && playerScore < 5) {
+
+        p.textContent = `${playRound('rock', getComputerChoice())}`;
+
+        score.textContent = `Your Score ${playerScore} Computer Score: ${computerScore}`
     }
     if (playerScore === 5) {
-        return `You won ${playerScore} to ${computerScore}!`
+        score.textContent = `Your Score ${playerScore} Computer Score: ${computerScore}. You won!`
     }
-    return `You lost ${computerScore} to ${playerScore}!`
+    if (computerScore === 5) {
+        score.textContent = `Your Score ${playerScore} Computer Score: ${computerScore}. You lost!`
+    }
 }
 
 let computerScore = 0;
 let playerScore = 0;
 
+
 // console.log(game());
+const container = document.querySelector('#container');
+const p = document.querySelector('p');
+const score = document.querySelector('#score');
 const rock = document.querySelector('#rock');
-rock.addEventListener('click', () => {
-    console.log(playRound('rock', getComputerChoice()));
-});
 const paper = document.querySelector('#paper');
-paper.addEventListener('click', () => {
-    console.log(playRound('paper', getComputerChoice()));
-});
 const scissors = document.querySelector('#scissors');
+
+rock.addEventListener('click', () => {
+    game();
+
+});
+
+paper.addEventListener('click', () => {
+    game();
+});
+
 scissors.addEventListener('click', () => {
-    console.log(playRound('scissors', getComputerChoice()));
+    game();
 });
