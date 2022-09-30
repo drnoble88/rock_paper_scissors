@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    background-color: #333d4b;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    margin-bottom: -5px;
+
+}
+
+button {
+    margin: 10px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: #3882F6;
+    border-color: gray;
+    color: #F9FAF8;
+}
+
+p {
+    color: #F9FAF8;
+    ;
+}
